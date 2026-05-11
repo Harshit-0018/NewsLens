@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "NewsLens AI",
+    "version": "1.0",
+    "description": "AI Political Bias Detector",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "http://127.0.0.1:8000/*",
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
