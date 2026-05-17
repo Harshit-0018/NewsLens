@@ -3,7 +3,7 @@ import re
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-MODEL_PATH = os.path.join("app", "models", "bias_model")
+MODEL_PATH = "harshit1230/newslens-bias-model"
 
 LABEL_MAP = {
     0: "Left",
