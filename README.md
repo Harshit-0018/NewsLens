@@ -8,7 +8,7 @@
 ![Transformers](https://img.shields.io/badge/HuggingFace-Transformers-yellow)
 ![AWS](https://img.shields.io/badge/AWS-EC2-orange)
 
-## 📖 Overview
+##  Overview
 
 NewsLens is a full-stack AI-powered news analysis platform that identifies political bias in news articles using a fine-tuned Transformer model. The application helps readers understand ideological leanings in news content by classifying articles into **Left**, **Center**, or **Right** perspectives while highlighting key phrases that influenced the prediction.
 
@@ -23,7 +23,7 @@ The platform combines:
 
 ---
 
-## 🎯 Problem Statement
+##  Problem Statement
 
 Modern news consumers are exposed to information from hundreds of media outlets daily.
 
@@ -41,7 +41,7 @@ NewsLens addresses these challenges using Artificial Intelligence and Natural La
 
 ---
 
-## 💡 Solution
+##  Solution
 
 NewsLens provides:
 
@@ -56,7 +56,7 @@ NewsLens provides:
 
 ---
 
-# 🏗️ System Architecture
+#  System Architecture
 
 ## High-Level Architecture
 
@@ -90,7 +90,7 @@ NewsLens provides:
 
 ---
 
-# 🤖 Machine Learning Pipeline
+#  Machine Learning Pipeline
 
 ## Why Machine Learning?
 
@@ -156,7 +156,7 @@ Left / Center / Right
 
 ---
 
-# 🔍 Important Phrase Extraction
+#  Important Phrase Extraction
 
 The platform extracts influential phrases from articles to help users understand why a prediction was made.
 
@@ -181,7 +181,7 @@ Example:
 
 ---
 
-# 🔐 Authentication System
+#  Authentication System
 
 NewsLens uses JWT-based authentication.
 
@@ -229,7 +229,7 @@ Frontend Storage
 
 ---
 
-# 🗄️ Database Design
+#  Database Design
 
 ## Users Collection
 
@@ -257,7 +257,7 @@ Frontend Storage
 
 ---
 
-# 🌐 News Scraping Workflow
+#  News Scraping Workflow
 
 ```text
 News URL
@@ -280,7 +280,7 @@ Bias Prediction
 
 ---
 
-# 🧩 Chrome Extension Workflow
+#  Chrome Extension Workflow
 
 ```text
 Open News Website
@@ -303,7 +303,7 @@ Extension Popup Result
 
 ---
 
-# ⚙️ Tech Stack
+#  Tech Stack
 
 | Layer              | Technology                |
 | ------------------ | ------------------------- |
@@ -321,7 +321,7 @@ Extension Popup Result
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ```text
 NewsLens/
@@ -354,7 +354,7 @@ NewsLens/
 
 ---
 
-# 🚀 Local Setup
+#  Local Setup
 
 ## Backend
 
@@ -383,7 +383,7 @@ npm run dev
 
 ---
 
-# 🔮 Future Enhancements
+#  Future Enhancements
 
 * Multi-language bias detection
 * Explainable AI visualizations
