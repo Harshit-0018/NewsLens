@@ -97,7 +97,7 @@ NewsLens provides:
 
 #  Machine Learning Pipeline
 
-## Why Machine Learning?
+## Why ML?
 
 Traditional keyword-based approaches fail to understand context.
 
@@ -138,6 +138,46 @@ Softmax Layer
       ▼
 Left / Center / Right
 ```
+
+## Model Training Details
+
+### Dataset
+
+The model was trained using a Kaggle news bias dataset containing approximately **100,000 news articles** labeled across different political viewpoints.
+
+Dataset characteristics:
+
+- ~100K news articles
+- Left, Center, and Right political labels
+- Long-form news content
+- Diverse news sources
+- Real-world political reporting
+
+### Model Selection
+
+Multiple NLP approaches were explored before finalizing the architecture.
+
+Models considered:
+
+- Traditional Machine Learning baselines
+- BERT-based architectures
+- RoBERTa Transformer
+
+RoBERTa was selected because of:
+
+- Better contextual language understanding
+- Improved pretraining methodology
+- Stronger text classification performance
+- Higher robustness on long-form articles
+
+### Fine-Tuning Process
+
+1. Data preprocessing and cleaning
+2. Tokenization using RoBERTa tokenizer
+3. Dataset splitting into training and validation sets
+4. Fine-tuning using PyTorch and Hugging Face Transformers
+5. Evaluation using classification metrics
+6. Model serialization and deployment
 
 ### Training Pipeline
 
