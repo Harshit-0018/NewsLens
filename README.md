@@ -1,4 +1,4 @@
-# 📰 NewsLens - AI-Powered News Bias Detection & Perspective Analysis
+#  NewsLens - AI-Powered News Bias Detection & Perspective Analysis
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
