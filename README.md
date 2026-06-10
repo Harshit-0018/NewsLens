@@ -28,9 +28,7 @@ The project covers the full engineering spectrum — from model training and a R
 
 ## Demo Video
 
-> 📽️ **[ https://github.com/user-attachments/assets/503148a4-23aa-4419-92b0-3e0b417c02ab ]**
-
-
+ https://github.com/user-attachments/assets/503148a4-23aa-4419-92b0-3e0b417c02ab 
 
 ---
 
