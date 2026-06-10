@@ -1,479 +1,571 @@
-#  NewsLens - AI-Powered News Bias Detection & Perspective Analysis
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
-![React](https://img.shields.io/badge/React-Frontend-61DAFB)
-![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
-![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-red)
-![Transformers](https://img.shields.io/badge/HuggingFace-Transformers-yellow)
-![AWS](https://img.shields.io/badge/AWS-EC2-orange)
+# 📰 NewsLens
 
-##  Overview
+### AI-Powered News Bias Detection & Perspective Analysis Platform
 
-NewsLens is a full-stack AI-powered news analysis platform that identifies political bias in news articles using a fine-tuned Transformer model. The application helps readers understand ideological leanings in news content by classifying articles into **Left**, **Center**, or **Right** perspectives while highlighting key phrases that influenced the prediction.
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com)
+[![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org)
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co)
+[![AWS](https://img.shields.io/badge/AWS-EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com)
 
-The platform combines:
-
-* React.js frontend
-* FastAPI backend
-* MongoDB Atlas database
-* Hugging Face Transformers
-* PyTorch deep learning
-* Chrome Extension integration
+</div>
 
 ---
 
-##  Problem Statement
+## Overview
 
-Modern news consumers are exposed to information from hundreds of media outlets daily.
+**NewsLens** is an intelligent full-stack news analysis platform that detects political bias in news articles using a fine-tuned **RoBERTa** transformer model. The platform classifies articles as **Left**, **Center**, or **Right** leaning while surfacing the key phrases that drove the prediction — giving readers genuine insight into the ideological framing behind the news they consume.
 
-Different organizations often present the same event from varying political perspectives, making it difficult for readers to distinguish factual reporting from ideological framing.
+Unlike simple keyword-based checkers, NewsLens understands **context**. The same topic can be framed with identical words yet carry an entirely different political lean depending on sentence structure, framing, and implicit assumptions. NewsLens captures this through transformer-based deep learning trained on a 3-class political bias dataset, achieving ~**89% accuracy**.
 
-### Challenges
-
-* Difficulty identifying political bias
-* Lack of balanced viewpoints
-* Information overload
-* Time-consuming manual analysis
-* Limited tools for perspective comparison
-
-NewsLens addresses these challenges using Artificial Intelligence and Natural Language Processing to automatically identify ideological bias in news content.
+The project covers the full engineering spectrum — from model training and a REST API backend, to a polished React frontend, analysis history with charts, a daily India news feed, and a Chrome Extension for in-browser analysis.
 
 ---
 
-##  Solution
+## Live Screenshots
 
-NewsLens provides:
+> All screenshots are from the running application.
 
-* ✅ Political Bias Detection
-* ✅ Left / Center / Right Classification
-* ✅ Important Phrase Extraction
-* ✅ News Article URL Scraping
-* ✅ User Authentication
-* ✅ Analysis History Tracking
-* ✅ Chrome Extension Support
-* ✅ Real-Time Predictions
+### Home & Login
+![Home & Login](./screenshots/home_login.png)
+
+### Analyze — Article Text Input
+![Analyze Article Text](./screenshots/analyze_text.png)
+
+### Analyze — URL Input
+![Analyze URL](./screenshots/analyze_url.png)
+
+### Daily India News Feed
+![Daily News](./screenshots/daily_news.png)
+
+### Analysis History with Charts
+![History](./screenshots/history.png)
+
+### About Page
+![About](./screenshots/about.png)
 
 ---
 
-#  System Architecture
+## Key Highlights
 
-## High-Level Architecture
+| Metric | Value |
+|---|---|
+| Bias Classification Accuracy | ~89% (3-class: Left / Center / Right) |
+| Model | Fine-tuned RoBERTa (HuggingFace Transformers) |
+| Bias Analysis Latency (Chrome Extension) | < 2 seconds |
+| Keyword Extraction | KeyBERT top-5 phrases |
+| Auth | JWT with bcrypt password hashing |
+| Database | MongoDB Atlas (cloud) |
+| Deployment | AWS EC2 |
 
-```text
-                        ┌──────────────────────┐
-                        │      End User        │
-                        └──────────┬───────────┘
-                                   │
-                                   ▼
-                        ┌──────────────────────┐
-                        │    React Frontend    │
-                        └──────────┬───────────┘
-                                   │
-                            REST API Calls
-                                   │
-                                   ▼
-                        ┌──────────────────────┐
-                        │    FastAPI Backend   │
-                        └──────────┬───────────┘
-                                   │
-        ┌──────────────┬───────────┼───────────┬──────────────┐
-        ▼              ▼           ▼           ▼              ▼
+---
 
- Authentication   Prediction   Scraping    History      Database
-    Service        Service     Service     Service      Service
+## Features
 
-                                   │
-                                   ▼
-                            MongoDB Atlas
+### Core Analysis
+- **Political Bias Detection** — Classifies any news article as Left, Center, or Right leaning using a fine-tuned RoBERTa transformer
+- **Confidence Score** — Returns a softmax probability score alongside every prediction
+- **Important Phrase Extraction** — Identifies the most influential phrases that drove the classification using KeyBERT
+- **Sentiment Analysis** — Determines whether the article's tone is Positive, Neutral, or Negative
+- **Named Entity Recognition (NER)** — Extracts people, organizations, and locations mentioned in the article
+
+### Input Modes
+- **Article Text** — Paste raw article text directly
+- **Article URL** — Submit a news article URL; the backend scrapes and parses the text automatically using `newspaper3k` and `BeautifulSoup4`
+
+### User Experience
+- **JWT Authentication** — Secure sign-up and login with hashed passwords
+- **Analysis History** — Every analysis is saved per user; browse past results with timestamps
+- **History Charts** — Pie chart of bias distribution (Left/Center/Right) and bar chart of sentiment distribution across all past analyses
+- **Daily India News Feed** — Curated daily headlines from Indian news sources, refreshed every day
+- **Live Preview** — Real-time word count and reading time estimate as you type
+- **Chrome Extension** — One-click bias analysis of the page you are currently reading in any browser tab
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| Frontend | React.js + Vite | Fast, component-based UI |
+| Styling | CSS Modules + Custom CSS | Responsive design |
+| Backend | FastAPI (Python) | High-performance REST API |
+| Database | MongoDB Atlas | Cloud-hosted document store |
+| Authentication | JWT + bcrypt | Secure stateless auth |
+| Deep Learning | PyTorch | Model training and inference |
+| NLP / Transformers | HuggingFace Transformers | RoBERTa tokenizer & model |
+| Bias Model | Fine-tuned RoBERTa | 3-class political bias classification |
+| Keyword Extraction | KeyBERT | Top-5 bias-driving phrase extraction |
+| Sentence Embeddings | Sentence Transformers | Semantic similarity for KeyBERT |
+| NER | spaCy | Named entity recognition |
+| Web Scraping | newspaper3k + BeautifulSoup4 | Article URL parsing |
+| Text Processing | trafilatura + lxml_html_clean | Clean article extraction |
+| Extension | Chrome Extension API (Manifest V3) | Browser-native analysis |
+| Deployment | AWS EC2 | Backend hosting |
+| Server | Uvicorn | ASGI server |
+
+---
+
+## System Architecture
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                         End User                             │
+│          (Web Browser / Chrome Extension)                    │
+└───────────────────────────┬──────────────────────────────────┘
+                            │
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                    React Frontend (Vite)                     │
+│   Home · Analyze · News Feed · History · About · Login       │
+└───────────────────────────┬──────────────────────────────────┘
+                            │  REST API (JSON over HTTP)
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│                  FastAPI Backend (Uvicorn)                   │
+├──────────────┬──────────────┬──────────────┬─────────────────┤
+│  /auth       │  /predict    │  /analyze-url│  /history       │
+│  Register    │  Text Bias   │  URL Scrape  │  User History   │
+│  Login       │  + NER       │  + Predict   │  CRUD           │
+│  JWT Issue   │  + Sentiment │              │                 │
+└──────────────┴──────┬───────┴──────────────┴─────────────────┘
+                      │
+          ┌───────────┴───────────┐
+          ▼                       ▼
+┌─────────────────┐   ┌───────────────────────┐
+│  ML Services    │   │   MongoDB Atlas        │
+│  ─────────────  │   │   ──────────────────── │
+│  classifier.py  │   │   users collection     │
+│  sentiment.py   │   │   history collection   │
+│  ner.py         │   │                        │
+│  keybert.py     │   └───────────────────────┘
+│  scraper.py     │
+└─────────────────┘
 ```
 
-## WorkFlow
-
-<img width="1693" height="929" alt="ChatGPT Image Jun 1, 2026, 02_26_18 PM" src="https://github.com/user-attachments/assets/12a1a7e9-b9a4-4fd5-a591-6ebd1d0c43c8" />
-
 ---
 
-## Demo
+## ML Pipeline
 
-### Login/Signup page
-<img width="1919" height="911" alt="image" src="https://github.com/user-attachments/assets/23b4c43c-58eb-427a-bfa6-51bdd7e074fe" />
+### Why RoBERTa?
 
-### Uncover the article BIAS (Can paste Article paragraph)
-<img width="1916" height="941" alt="image" src="https://github.com/user-attachments/assets/43816d85-41c5-454c-823f-a2f73c863ec5" />
+Traditional keyword-based approaches fail to capture context. Consider:
 
-### Uncover the article BIAS (Can paste the URL of news)
-<img width="1916" height="937" alt="image" src="https://github.com/user-attachments/assets/a51492d8-c7f8-4762-acd9-7de8fbeaf722" />
-
-### Daily News Tab
-<img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/084b9b28-c155-4d40-86ee-1643199e6fb1" />
-
-### History Tab
-<img width="1917" height="947" alt="image" src="https://github.com/user-attachments/assets/2d119690-e14b-46e6-bdac-676e668fdd7d" />
-
-### About NewsLens
-<img width="1915" height="942" alt="image" src="https://github.com/user-attachments/assets/e792c9dd-e0d8-4589-bc93-692b0e4aa717" />
-
----
-
-## Working
-
-
-https://github.com/user-attachments/assets/7184a14b-806a-48bb-b457-56e9c571a56c
-
----
-
-
-#  Machine Learning Pipeline
-
-## Why ML?
-
-Traditional keyword-based approaches fail to understand context.
-
-Example:
-
-"The government successfully reduced inflation."
+> "The government successfully reduced inflation."
 
 vs
 
-"The government claims inflation was reduced."
+> "The government *claims* inflation was reduced."
 
-Both contain similar keywords but convey different meanings.
-
-To understand contextual meaning, NewsLens uses a fine-tuned RoBERTa Transformer model.
-
----
-
-## ML Workflow
-
-```text
-News Article
-      │
-      ▼
-Text Cleaning
-      │
-      ▼
-Tokenizer
-      │
-      ▼
-RoBERTa Transformer
-      │
-      ▼
-Classification Head
-      │
-      ▼
-Softmax Layer
-      │
-      ▼
-Left / Center / Right
-```
-
-## Model Training Details
-
-### Dataset
-
-The model was trained using a Kaggle news bias dataset containing approximately **100,000 news articles** labeled across different political viewpoints.
-
-Dataset characteristics:
-
-- ~100K news articles
-- Left, Center, and Right political labels
-- Long-form news content
-- Diverse news sources
-- Real-world political reporting
-
-### Model Selection
-
-Multiple NLP approaches were explored before finalizing the architecture.
-
-Models considered:
-
-- Traditional Machine Learning baselines
-- BERT-based architectures
-- RoBERTa Transformer
-
-RoBERTa was selected because of:
-
-- Better contextual language understanding
-- Improved pretraining methodology
-- Stronger text classification performance
-- Higher robustness on long-form articles
-
-### Fine-Tuning Process
-
-1. Data preprocessing and cleaning
-2. Tokenization using RoBERTa tokenizer
-3. Dataset splitting into training and validation sets
-4. Fine-tuning using PyTorch and Hugging Face Transformers
-5. Evaluation using classification metrics
-6. Model serialization and deployment
+Both sentences contain identical keywords — but carry very different implied trust in the government's narrative. RoBERTa's attention mechanism captures this distinction. It was pre-trained on 160GB of text and fine-tuned here on a labeled 3-class political bias dataset.
 
 ### Training Pipeline
 
-1. Dataset Collection
-2. Text Cleaning
-3. Tokenization
-4. Fine-Tuning RoBERTa
-5. Validation
-6. Model Saving
-7. Deployment
+```
+Raw Political News Dataset
+          │
+          ▼
+Text Cleaning & Normalization
+          │
+          ▼
+RoBERTa Tokenizer (max 512 tokens)
+          │
+          ▼
+Fine-tune RoBERTa-base
+  (Classification Head added)
+          │
+          ▼
+Evaluate on Validation Set
+  (~89% accuracy, 3 classes)
+          │
+          ▼
+Save model weights + tokenizer
+  (model.safetensors + config.json)
+          │
+          ▼
+Load in FastAPI for inference
+```
 
-### Prediction Pipeline
+### Inference Pipeline (per request)
 
-1. User submits article
-2. Text tokenized
-3. RoBERTa generates logits
-4. Softmax computes probabilities
-5. Highest probability selected
-6. Confidence score returned
-7. Important phrases extracted
-
----
-
-#  Important Phrase Extraction
-
-The platform extracts influential phrases from articles to help users understand why a prediction was made.
-
-### Process
-
-* Split article into sentences
-* Remove duplicates
-* Filter irrelevant content
-* Select meaningful phrases
-* Return top phrases
-
-Example:
-
-```json
-{
-  "important_phrases": [
-    "The government announced a new economic initiative.",
-    "Inflation rates showed significant improvement."
-  ]
-}
+```
+Article Text Input
+       │
+       ▼
+Tokenize (RoBERTa tokenizer)
+       │
+       ▼
+RoBERTa Forward Pass (PyTorch)
+       │
+       ▼
+Softmax → [P(Left), P(Center), P(Right)]
+       │
+       ▼
+argmax → Prediction Label
+       │
+       ▼
+KeyBERT → Top-5 Important Phrases
+       │
+       ▼
+spaCy NER → People / Orgs / Locations
+       │
+       ▼
+Sentiment model → Positive / Neutral / Negative
+       │
+       ▼
+Return JSON response to frontend
 ```
 
 ---
 
-#  Authentication System
+## API Reference
 
-NewsLens uses JWT-based authentication.
+All endpoints are prefixed under the FastAPI backend (default: `http://localhost:8000`).
 
-## Registration Flow
+### Authentication
 
-```text
-User
- │
- ▼
-Signup Form
- │
- ▼
-FastAPI Backend
- │
- ▼
-Password Hashing
- │
- ▼
-MongoDB
-```
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/auth/register` | Create a new user account |
+| `POST` | `/auth/login` | Authenticate and receive JWT token |
 
-## Login Flow
+### Analysis
 
-```text
-User
- │
- ▼
-Login Request
- │
- ▼
-Credential Verification
- │
- ▼
-JWT Token Generation
- │
- ▼
-Frontend Storage
-```
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/predict` | Analyze article text for bias, sentiment, NER, and key phrases |
+| `POST` | `/analyze-url` | Scrape a URL and run the full analysis pipeline |
 
-## Logout Flow
+### News & History
 
-* Remove JWT token from local storage
-* Clear user session
-* Redirect to login page
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/news` | Fetch daily India news headlines |
+| `GET` | `/history` | Get all past analyses for the authenticated user |
+| `DELETE` | `/history/{id}` | Delete a specific analysis entry |
 
----
-
-#  Database Design
-
-## Users Collection
+### Sample Response — `/predict`
 
 ```json
 {
-  "_id": "...",
-  "username": "harshit",
-  "email": "user@example.com",
-  "hashed_password": "..."
-}
-```
-
-## History Collection
-
-```json
-{
-  "_id": "...",
-  "user_id": "...",
-  "article": "...",
   "prediction": "Center",
   "confidence": 0.91,
-  "timestamp": "2025-05-17"
+  "sentiment": "Neutral",
+  "important_phrases": [
+    "government announced new policy",
+    "inflation rates under control",
+    "fiscal measures implemented"
+  ],
+  "entities": {
+    "persons": ["Finance Minister"],
+    "organizations": ["RBI", "Ministry of Finance"],
+    "locations": ["New Delhi"]
+  }
 }
 ```
 
 ---
 
-#  News Scraping Workflow
+## Project Structure
 
-```text
-News URL
-   │
-   ▼
-Requests
-   │
-   ▼
-HTML Extraction
-   │
-   ▼
-Article Parsing
-   │
-   ▼
-Clean Text
-   │
-   ▼
-Bias Prediction
 ```
-
----
-
-#  Chrome Extension Workflow
-
-```text
-Open News Website
-        │
-        ▼
-Content Script
-        │
-        ▼
-Extract Article Text
-        │
-        ▼
-FastAPI API
-        │
-        ▼
-ML Prediction
-        │
-        ▼
-Extension Popup Result
-```
-
----
-
-#  Tech Stack
-
-| Layer              | Technology                |
-| ------------------ | ------------------------- |
-| Frontend           | React.js                  |
-| Backend            | FastAPI                   |
-| Database           | MongoDB Atlas             |
-| Authentication     | JWT                       |
-| Deep Learning      | PyTorch                   |
-| NLP                | Hugging Face Transformers |
-| Model              | RoBERTa                   |
-| Keyword Extraction | KeyBERT                   |
-| Embeddings         | Sentence Transformers     |
-| Extension          | Chrome Extension API      |
-| Deployment         | AWS EC2                   |
-
----
-
-#  Project Structure
-
-```text
 NewsLens/
 │
 ├── backend/
 │   ├── app/
-│   │   ├── routes/
-│   │   ├── services/
 │   │   ├── models/
-│   │   ├── schemas/
-│   │   └── main.py
-│   │
-│   ├── training/
+│   │   │   └── bias_model/          # Saved RoBERTa weights
+│   │   │       ├── model.safetensors
+│   │   │       ├── config.json
+│   │   │       ├── tokenizer_config.json
+│   │   │       └── tokenizer.json
+│   │   ├── routes/
+│   │   │   ├── auth.py              # Register & login endpoints
+│   │   │   ├── history.py           # History CRUD endpoints
+│   │   │   ├── news.py              # Daily news feed endpoint
+│   │   │   └── predict.py           # Bias prediction endpoint
+│   │   ├── schemas/                 # Pydantic request/response models
+│   │   ├── services/
+│   │   │   ├── classifier.py        # RoBERTa bias inference
+│   │   │   ├── sentiment.py         # Sentiment analysis
+│   │   │   ├── ner.py               # Named entity recognition (spaCy)
+│   │   │   ├── scraper.py           # URL article scraping
+│   │   │   └── history.py           # History service logic
+│   │   ├── utils/
+│   │   │   └── database.py          # MongoDB connection
+│   │   └── main.py                  # FastAPI app entrypoint
+│   ├── training/                    # Model fine-tuning scripts
 │   ├── requirements.txt
 │   └── .env
 │
 ├── frontend/
 │   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   │   ├── ArticleInput.jsx     # Text/URL input tabs
+│   │   │   ├── ConfidenceChart.jsx  # Prediction confidence bar
+│   │   │   ├── EntityList.jsx       # NER results display
+│   │   │   ├── Navbar.jsx           # Top navigation
+│   │   │   ├── ProtectedRoute.jsx   # Auth guard
+│   │   │   ├── ResultCard.jsx       # Analysis result card
+│   │   │   └── SentimentBox.jsx     # Sentiment display
+│   │   ├── pages/
+│   │   │   ├── About.jsx
+│   │   │   ├── Analyze.jsx          # Main analysis page
+│   │   │   ├── History.jsx          # History + charts
+│   │   │   ├── Home.jsx             # Landing / login page
+│   │   │   ├── Login.jsx
+│   │   │   ├── NewsDashboard.jsx    # Daily India news feed
+│   │   │   └── Signup.jsx
+│   │   ├── services/
+│   │   │   └── api.js               # Axios API calls
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
 │   ├── public/
-│   └── package.json
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
 │
-├── extension/
+├── extension/                       # Chrome Extension (Manifest V3)
 │   ├── manifest.json
+│   ├── popup.html
 │   ├── popup.js
-│   ├── content.js
-│   └── popup.html
+│   └── content.js
 │
+├── .gitignore
 └── README.md
 ```
 
 ---
 
-#  Local Setup
+## Database Schema
 
-## Backend
+### `users` Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "username": "harshit",
+  "email": "user@example.com",
+  "hashed_password": "$2b$12$...",
+  "created_at": "2026-05-17T10:00:00Z"
+}
+```
+
+### `history` Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "user_id": "ObjectId",
+  "input": "https://example.com/article or article text",
+  "prediction": "Center",
+  "confidence": 0.91,
+  "sentiment": "Neutral",
+  "important_phrases": ["phrase one", "phrase two"],
+  "entities": {
+    "persons": [],
+    "organizations": [],
+    "locations": []
+  },
+  "timestamp": "2026-05-17T10:08:03Z"
+}
+```
+
+---
+
+## Authentication Flow
+
+### Registration
+```
+User fills Signup form
+        │
+        ▼
+POST /auth/register
+        │
+        ▼
+Email uniqueness check (MongoDB)
+        │
+        ▼
+bcrypt password hashing
+        │
+        ▼
+User document saved to MongoDB
+        │
+        ▼
+JWT token returned
+```
+
+### Login & Session
+```
+POST /auth/login  →  Credential verification
+        │
+        ▼
+JWT token issued (signed, expiring)
+        │
+        ▼
+Token stored in frontend (localStorage)
+        │
+        ▼
+All subsequent requests: Authorization: Bearer <token>
+        │
+        ▼
+FastAPI dependency extracts user_id from token
+        │
+        ▼
+Logout: token cleared, redirect to login
+```
+
+---
+
+## Chrome Extension
+
+The Chrome Extension integrates the full NewsLens ML pipeline directly into the browser. On any news article page:
+
+1. Click the NewsLens extension icon in the toolbar
+2. The content script extracts the article's visible text
+3. Text is sent to the FastAPI `/predict` endpoint
+4. Results (bias label, confidence, key phrases) are rendered in the extension popup — **all within ~2 seconds**
+
+```
+News Website (active tab)
+        │
+        ▼
+content.js  →  Extract article text from DOM
+        │
+        ▼
+popup.js  →  POST to FastAPI /predict
+        │
+        ▼
+ML Inference (RoBERTa)
+        │
+        ▼
+Popup UI  →  Display bias + confidence + phrases
+```
+
+---
+
+## Local Setup
+
+### Prerequisites
+
+- Python 3.11+
+- Node.js 18+
+- MongoDB Atlas account (or local MongoDB)
+- The trained model weights (placed in `backend/app/models/bias_model/`)
+
+### Backend
 
 ```bash
 cd backend
 
+# Create and activate virtual environment
 python -m venv venv
 
 # Windows
 venv\Scripts\activate
 
+# macOS / Linux
+source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
 
+# Configure environment variables
+cp .env.example .env
+# Edit .env: MONGODB_URI, JWT_SECRET_KEY, etc.
+
+# Start the server
 uvicorn app.main:app --reload
 ```
 
-## Frontend
+The API will be live at `http://localhost:8000`. Interactive docs at `http://localhost:8000/docs`.
+
+### Frontend
 
 ```bash
 cd frontend
 
+# Install dependencies
 npm install
 
+# Start development server
 npm run dev
+```
+
+The frontend will be live at `http://localhost:5173`.
+
+### Chrome Extension
+
+1. Open Chrome and navigate to `chrome://extensions`
+2. Enable **Developer Mode** (top-right toggle)
+3. Click **Load unpacked**
+4. Select the `extension/` directory from this repo
+
+The extension will now appear in your Chrome toolbar.
+
+---
+
+## Python Dependencies
+
+```
+fastapi
+uvicorn
+transformers
+torch
+spacy
+textblob
+beautifulsoup4
+requests
+pydantic
+pymongo
+python-dotenv
+keybert
+sentence-transformers
+newspaper3k
+lxml_html_clean
+trafilatura
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
+python-multipart
+email-validator
 ```
 
 ---
 
-#  Future Enhancements
+## Future Enhancements
 
-* Multi-language bias detection
-* Explainable AI visualizations
-* News source credibility scoring
-* Fact-check integration
-* Sentiment analysis
-* Mobile application
-* Personalized recommendations
-* Real-time news monitoring
+- **Multi-language support** — Bias detection for Hindi, Spanish, French, and other major languages
+- **Explainable AI visualizations** — Attention heatmaps overlaid on article text showing token-level importance
+- **Source credibility scoring** — Separate model to rate the historical reliability of the publication domain
+- **Fact-check integration** — Cross-reference claims against Google Fact Check API
+- **Comparative view** — Side-by-side analysis of the same event across multiple outlets
+- **Mobile application** — React Native companion app
+- **Real-time monitoring** — WebSocket-based live bias tracking as articles are published
+- **Personalized media diet** — Dashboard tracking a user's own reading bias over time
 
 ---
 
-# 👨‍💻 Author
+## About the Author
 
 **Harshit Singh**
 
-AI-Powered News Bias Detection & Perspective Analysis Platform
+Building AI systems that make complex information more transparent and accessible. NewsLens is a personal project built to explore the intersection of NLP, transformer models, and full-stack engineering — from raw dataset training to production deployment.
 
-Built using React, FastAPI, MongoDB, PyTorch, Hugging Face Transformers, and AWS.
+- GitHub: [@Harshit-0018](https://github.com/Harshit-0018)
+
+---
+
+<div align="center">
+
+Built with React · FastAPI · MongoDB Atlas · PyTorch · HuggingFace Transformers · AWS EC2
+
+© 2026 NewsLens
+
+</div>
