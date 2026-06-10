@@ -37,22 +37,22 @@ The project covers the full engineering spectrum — from model training and a R
 > All screenshots are from the running application.
 
 ### Home & Login
-![Home & Login](<img width="1916" height="941" alt="image" src="https://github.com/user-attachments/assets/c4b489aa-d351-45c9-9fce-aaf3572cf5eb" />)
+<img width="1916" height="941" alt="image" src="https://github.com/user-attachments/assets/c4b489aa-d351-45c9-9fce-aaf3572cf5eb" />
 
 ### Analyze — Article Text Input
-![Analyze Article Text](<img width="1917" height="946" alt="image" src="https://github.com/user-attachments/assets/9abc0a69-bf5c-4565-a91b-9c31b1185dc0" />)
+<img width="1917" height="946" alt="image" src="https://github.com/user-attachments/assets/9abc0a69-bf5c-4565-a91b-9c31b1185dc0" />
 
 ### Analyze — URL Input
-![Analyze URL](<img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/3b897f44-40f2-4edd-955d-86cf43712db6" />)
+<img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/3b897f44-40f2-4edd-955d-86cf43712db6" />
 
 ### Daily India News Feed
-![Daily News](<img width="1919" height="948" alt="image" src="https://github.com/user-attachments/assets/49548dae-1390-44c7-96a2-6f5cf535972f" />)
+<img width="1919" height="948" alt="image" src="https://github.com/user-attachments/assets/49548dae-1390-44c7-96a2-6f5cf535972f" />
 
 ### Analysis History with Charts
-![History](<img width="1918" height="942" alt="image" src="https://github.com/user-attachments/assets/0f2f2df9-e2c7-4ff4-b00e-ba213fe8a83c" />)
+<img width="1918" height="942" alt="image" src="https://github.com/user-attachments/assets/0f2f2df9-e2c7-4ff4-b00e-ba213fe8a83c" />
 
 ### About Page
-![About](<img width="1918" height="944" alt="image" src="https://github.com/user-attachments/assets/69b7080c-ef96-41e3-8017-d61601ad4317" />)
+<img width="1918" height="944" alt="image" src="https://github.com/user-attachments/assets/69b7080c-ef96-41e3-8017-d61601ad4317" />
 
 ---
 
