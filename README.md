@@ -95,6 +95,17 @@ NewsLens provides:
 
 ---
 
+## Demo
+
+### Login/Signup page
+<img width="1919" height="911" alt="image" src="https://github.com/user-attachments/assets/23b4c43c-58eb-427a-bfa6-51bdd7e074fe" />
+
+### Uncover the article BIAS
+<img width="1916" height="941" alt="image" src="https://github.com/user-attachments/assets/43816d85-41c5-454c-823f-a2f73c863ec5" />
+
+---
+
+
 #  Machine Learning Pipeline
 
 ## Why ML?
