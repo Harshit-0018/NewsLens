@@ -196,7 +196,68 @@ Save model weights + tokenizer
 Load in FastAPI for inference
 ```
 
+### How the Confidence Score is Computed
+
+The RoBERTa classification head outputs raw **logits** for each of the 
+three classes `[Left, Center, Right]`. These logits are passed through a 
+**softmax function** to produce a probability distribution that sums to 1.
+
+```python
+import torch.nn.functional as F
+
+logits = model(**inputs).logits        # e.g. tensor([-0.42, 2.31, 0.18])
+probs  = F.softmax(logits, dim=-1)     # e.g. tensor([0.07, 0.85, 0.08])
+confidence = probs.max().item()        # 0.85  (Center)
+label      = probs.argmax().item()     # 1     → "Center"
+```
+
+The **confidence score** returned to the user is the maximum softmax 
+probability — i.e. how certain the model is about its top prediction. 
+A score of 0.91 means the model assigned 91% probability to the predicted 
+class across all three.
+
+---
+
+### How Important Phrase Extraction Works
+
+**KeyBERT** uses a BERT-based sentence encoder to extract the phrases most 
+semantically similar to the article's overall embedding.
+
+**Pipeline:**
+1. The full article text is encoded into a document-level embedding using 
+   `sentence-transformers` (`all-MiniLM-L6-v2`)
+2. N-gram candidates (1–3 words) are generated from the article body
+3. Each candidate phrase is independently encoded
+4. **Cosine similarity** is computed between each phrase embedding and the 
+   document embedding
+5. The top-5 phrases with the highest similarity scores are returned
+
+This means the extracted phrases are not just frequent words — they are the 
+phrases that best *represent* the article's overall topic and framing, making 
+them meaningful signals for why the bias label was assigned.
+
+---
+
+### Named Entity Recognition (NER)
+
+Entity extraction uses **spaCy's `en_core_web_sm`** pipeline, which runs a 
+CNN-based NER model trained on the OntoNotes 5 corpus.
+
+Entities are filtered to three categories relevant to news analysis:
+
+| spaCy Label | Mapped To | Example |
+|---|---|---|
+| `PERSON` | Persons | "Narendra Modi", "Elon Musk" |
+| `ORG` | Organizations | "RBI", "Supreme Court", "Meta" |
+| `GPE` | Locations | "New Delhi", "United States" |
+
+Duplicate entities are deduplicated and returned as structured JSON 
+alongside the bias prediction in a single API response.
+
+---
+
 ### Inference Pipeline (per request)
+
 
 ```
 Article Text Input
@@ -377,6 +438,27 @@ NewsLens/
 ├── .gitignore
 └── README.md
 ```
+
+---
+
+## Environment Variables
+
+Create a `.env` file in the `backend/` directory with the following keys:
+
+```env
+# MongoDB
+MONGODB_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/newslens
+
+# JWT
+JWT_SECRET_KEY=your_secret_key_here
+JWT_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=1440
+
+# News API (for daily feed)
+NEWS_API_KEY=your_newsapi_key_here
+```
+
+> Never commit `.env` to version control. The `.gitignore` already excludes it.
 
 ---
 
