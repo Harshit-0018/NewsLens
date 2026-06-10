@@ -115,11 +115,14 @@ NewsLens provides:
 ### About NewsLens
 <img width="1915" height="942" alt="image" src="https://github.com/user-attachments/assets/e792c9dd-e0d8-4589-bc93-692b0e4aa717" />
 
-
-
-
 ---
 
+## Working
+
+
+https://github.com/user-attachments/assets/7184a14b-806a-48bb-b457-56e9c571a56c
+
+---
 
 
 #  Machine Learning Pipeline
