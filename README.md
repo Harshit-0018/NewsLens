@@ -28,11 +28,9 @@ The project covers the full engineering spectrum — from model training and a R
 
 ## Demo Video
 
-> 📽️ **[paste your video link / embed here]**
+> 📽️ **[ https://github.com/user-attachments/assets/503148a4-23aa-4419-92b0-3e0b417c02ab ]**
 
-<!-- To embed a YouTube video, replace YOUR_VIDEO_ID below:
-[![NewsLens Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
--->
+
 
 ---
 
@@ -41,22 +39,22 @@ The project covers the full engineering spectrum — from model training and a R
 > All screenshots are from the running application.
 
 ### Home & Login
-![Home & Login](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_125624.png)
+![Home & Login](<img width="1916" height="941" alt="image" src="https://github.com/user-attachments/assets/c4b489aa-d351-45c9-9fce-aaf3572cf5eb" />)
 
 ### Analyze — Article Text Input
-![Analyze Article Text](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_130349.png)
+![Analyze Article Text](<img width="1917" height="946" alt="image" src="https://github.com/user-attachments/assets/9abc0a69-bf5c-4565-a91b-9c31b1185dc0" />)
 
 ### Analyze — URL Input
-![Analyze URL](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_130453.png)
+![Analyze URL](<img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/3b897f44-40f2-4edd-955d-86cf43712db6" />)
 
 ### Daily India News Feed
-![Daily News](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_130609.png)
+![Daily News](<img width="1919" height="948" alt="image" src="https://github.com/user-attachments/assets/49548dae-1390-44c7-96a2-6f5cf535972f" />)
 
 ### Analysis History with Charts
-![History](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_130641.png)
+![History](<img width="1918" height="942" alt="image" src="https://github.com/user-attachments/assets/0f2f2df9-e2c7-4ff4-b00e-ba213fe8a83c" />)
 
 ### About Page
-![About](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_130708.png)
+![About](<img width="1918" height="944" alt="image" src="https://github.com/user-attachments/assets/69b7080c-ef96-41e3-8017-d61601ad4317" />)
 
 ---
 
