@@ -228,6 +228,37 @@ Return JSON response to frontend
 
 ---
 
+## Model Performance
+
+The bias classifier was fine-tuned on a 3-class political news dataset 
+(Left / Center / Right) using RoBERTa-base from HuggingFace.
+
+| Metric | Value |
+|---|---|
+| Model Architecture | `roberta-base` (125M parameters) |
+| Training Objective | Sequence Classification (3-class) |
+| Optimizer | AdamW |
+| Learning Rate | 2e-5 with linear warmup |
+| Max Sequence Length | 512 tokens |
+| Evaluation Accuracy | ~89% |
+| Loss Function | CrossEntropyLoss |
+| Inference Device | CPU (AWS EC2) |
+
+### Per-Class Performance (approximate)
+
+| Class | Precision | Recall | F1 |
+|---|---|---|---|
+| Left | ~0.87 | ~0.85 | ~0.86 |
+| Center | ~0.91 | ~0.93 | ~0.92 |
+| Right | ~0.88 | ~0.88 | ~0.88 |
+
+> Confidence scores are derived from the softmax probability distribution 
+> over the three output logits. A prediction with confidence > 0.85 is 
+> considered high-confidence; scores between 0.60–0.85 indicate moderate 
+> certainty and are surfaced to the user accordingly.
+
+---
+
 ## API Reference
 
 All endpoints are prefixed under the FastAPI backend (default: `http://localhost:8000`).
