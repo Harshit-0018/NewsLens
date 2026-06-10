@@ -26,27 +26,37 @@ The project covers the full engineering spectrum — from model training and a R
 
 ---
 
+## Demo Video
+
+> 📽️ **[paste your video link / embed here]**
+
+<!-- To embed a YouTube video, replace YOUR_VIDEO_ID below:
+[![NewsLens Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+-->
+
+---
+
 ## Live Screenshots
 
 > All screenshots are from the running application.
 
 ### Home & Login
-![Home & Login](./screenshots/home_login.png)
+![Home & Login](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_125624.png)
 
 ### Analyze — Article Text Input
-![Analyze Article Text](./screenshots/analyze_text.png)
+![Analyze Article Text](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_130349.png)
 
 ### Analyze — URL Input
-![Analyze URL](./screenshots/analyze_url.png)
+![Analyze URL](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_130453.png)
 
 ### Daily India News Feed
-![Daily News](./screenshots/daily_news.png)
+![Daily News](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_130609.png)
 
 ### Analysis History with Charts
-![History](./screenshots/history.png)
+![History](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_130641.png)
 
 ### About Page
-![About](./screenshots/about.png)
+![About](https://github.com/Harshit-0018/NewsLens/assets/183278873/Screenshot_2026-06-10_130708.png)
 
 ---
 
