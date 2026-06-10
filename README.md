@@ -100,10 +100,26 @@ NewsLens provides:
 ### Login/Signup page
 <img width="1919" height="911" alt="image" src="https://github.com/user-attachments/assets/23b4c43c-58eb-427a-bfa6-51bdd7e074fe" />
 
-### Uncover the article BIAS
+### Uncover the article BIAS (Can paste Article paragraph)
 <img width="1916" height="941" alt="image" src="https://github.com/user-attachments/assets/43816d85-41c5-454c-823f-a2f73c863ec5" />
 
+### Uncover the article BIAS (Can paste the URL of news)
+<img width="1916" height="937" alt="image" src="https://github.com/user-attachments/assets/a51492d8-c7f8-4762-acd9-7de8fbeaf722" />
+
+### Daily News Tab
+<img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/084b9b28-c155-4d40-86ee-1643199e6fb1" />
+
+### History Tab
+<img width="1917" height="947" alt="image" src="https://github.com/user-attachments/assets/2d119690-e14b-46e6-bdac-676e668fdd7d" />
+
+### About NewsLens
+<img width="1915" height="942" alt="image" src="https://github.com/user-attachments/assets/e792c9dd-e0d8-4589-bc93-692b0e4aa717" />
+
+
+
+
 ---
+
 
 
 #  Machine Learning Pipeline
