@@ -12,6 +12,15 @@
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co)
 [![AWS](https://img.shields.io/badge/AWS-EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com)
 
+<div align="center">
+
+![GitHub last commit](https://img.shields.io/github/last-commit/Harshit-0018/NewsLens?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/Harshit-0018/NewsLens?style=flat-square)
+![GitHub language count](https://img.shields.io/github/languages/count/Harshit-0018/NewsLens?style=flat-square)
+![GitHub top language](https://img.shields.io/github/languages/top/Harshit-0018/NewsLens?style=flat-square)
+
+</div>
+
 </div>
 
 ---
