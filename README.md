@@ -88,10 +88,9 @@ NewsLens provides:
                             MongoDB Atlas
 ```
 
-##WorkFlow
+## WorkFlow
 
 <img width="1693" height="929" alt="ChatGPT Image Jun 1, 2026, 02_26_18 PM" src="https://github.com/user-attachments/assets/12a1a7e9-b9a4-4fd5-a591-6ebd1d0c43c8" />
-
 
 ---
 
