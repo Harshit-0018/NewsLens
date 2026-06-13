@@ -680,12 +680,12 @@ email-validator
 
 ---
 
-## About the Author
+## Author
 
 **Harshit**
 
 Building AI systems that make complex information more transparent and accessible. NewsLens is a personal project built to explore the intersection of NLP, transformer models, and full-stack engineering — from raw dataset training to production deployment.
-Some developments are under process , will commit in few days.
+Some developments are under process , will commit in few days.(Preferred)
 
 - GitHub: [@Harshit-0018](https://github.com/Harshit-0018)
 
@@ -693,7 +693,7 @@ Some developments are under process , will commit in few days.
 
 <div align="center">
 
-Built with React · FastAPI · MongoDB Atlas · PyTorch · HuggingFace Transformers · AWS EC2
+Built with React · FastAPI · MongoDB Atlas · PyTorch · HuggingFace Transformers · AWS EC2 ~ RoBerta
 
 © 2026 NewsLens
 
